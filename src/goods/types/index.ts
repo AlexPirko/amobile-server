@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker';
 import { Op } from 'sequelize';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -6,22 +5,24 @@ export class Goods {
   @ApiProperty({ example: 1 })
   id: number;
 
-  @ApiProperty({ example: faker.lorem.sentence(2) })
+  @ApiProperty({ example: 'Apple' })
   goods_model: string;
 
   @ApiProperty({ example: 12345 })
   price: string;
 
-  @ApiProperty({ example: faker.internet.password() })
+  @ApiProperty({ example: 'qwerty' })
   vendor_code: string;
 
-  @ApiProperty({ example: faker.lorem.word() })
+  @ApiProperty({ example: 'iPhone' })
   name: string;
 
-  @ApiProperty({ example: faker.lorem.sentence() })
+  @ApiProperty({ example: 'Memory: 512Mb' })
   description: string;
 
-  @ApiProperty({ example: faker.image.avatar() })
+  @ApiProperty({
+    example: 'https://amobile.s3.eu-north-1.amazonaws.com/samsung_fold5.png',
+  })
   images: string;
 
   @ApiProperty({ example: 5 })

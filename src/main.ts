@@ -13,9 +13,9 @@ async function bootstrap() {
       resave: false,
       saveUninitialized: false,
     }),
+    passport.initialize(),
+    passport.session(),
   );
-  app.use(passport.initialize());
-  app.use(passport.session());
 
   app.enableCors({
     credentials: true,
