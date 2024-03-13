@@ -21,6 +21,7 @@ async function bootstrap() {
     origin: [
       'https://amobile.vercel.app',
       'http://amobile.vercel.app',
+      'http://localhost:3001',
       'http://localhost:3000',
     ],
     credentials: true, // разрешить отправку учетных данных (например, куки)
