@@ -18,17 +18,8 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: [
-      'http://localhost:3000',
-      'http://amobile-server.vercel.app',
-      'http://www.amobile-server.vercel.app',
-      'http://app.amobile-server.vercel.app',
-      'https://amobile-server.vercel.app',
-      'https://www.amobile-server.vercel.app',
-      'https://app.amobile-server.vercel.app',
-    ],
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
-    credentials: true,
+    origin: 'https://amobile.vercel.app',
+    credentials: true, // разрешить отправку учетных данных (например, куки)
   });
 
   const config = new DocumentBuilder()
