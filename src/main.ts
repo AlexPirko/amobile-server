@@ -18,7 +18,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: 'https://amobile.vercel.app',
+    origin: ['https://amobile.vercel.app', 'http://amobile.vercel.app'],
     credentials: true, // разрешить отправку учетных данных (например, куки)
   });
 
