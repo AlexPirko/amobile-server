@@ -5,4 +5,8 @@ export class MakePaymentDto {
   @ApiProperty({ example: 100 })
   @IsNotEmpty()
   readonly amount: number;
+
+  @ApiProperty({ example: 'Memory:512Mb' })
+  @IsNotEmpty()
+  readonly description?: string;
 }

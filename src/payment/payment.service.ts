@@ -14,11 +14,13 @@ export class PaymentService {
 
   checkout(makePaymentDto: MakePaymentDto) {
     const totalPrice = makePaymentDto.amount;
+    const cart = makePaymentDto.description;
 
     return this.stripe.paymentIntents.create({
       amount: +totalPrice.toFixed(2) * 100, // cents
       currency: 'uah', // set currency
       payment_method_types: ['card'],
+      description: cart,
     });
   }
 }
