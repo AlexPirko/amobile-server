@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['https://amobile.vercel.app'],
+    origin: true,
   });
 
   const config = new DocumentBuilder()
