@@ -12,7 +12,7 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { LocalAuthGuard } from '../auth/local.auth.guard';
-// import { AuthenticatedGuard } from 'src/auth/auth.guard';
+import { AuthenticatedGuard } from 'src/auth/auth.guard';
 import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
 import {
   LoginCheckResponse,
@@ -45,7 +45,7 @@ export class UsersController {
 
   @ApiOkResponse({ type: LoginCheckResponse })
   @Get('/login-check')
-  // @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard)
   loginCheck(@Request() req) {
     return req.user;
   }
