@@ -4,6 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder } from '@nestjs/swagger';
 import { SwaggerModule } from '@nestjs/swagger/dist';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,10 +13,15 @@ async function bootstrap() {
       secret: 'keyword',
       resave: false,
       saveUninitialized: false,
+      cookie: {
+        sameSite: 'strict',
+      },
     }),
     passport.initialize(),
     passport.session(),
   );
+
+  app.use(cookieParser());
 
   app.enableCors({
     origin: [
