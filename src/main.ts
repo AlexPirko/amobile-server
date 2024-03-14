@@ -13,10 +13,6 @@ async function bootstrap() {
       secret: 'keyword',
       resave: false,
       saveUninitialized: false,
-      cookie: {
-        sameSite: 'none',
-        secure: false,
-      },
     }),
     passport.initialize(),
     passport.session(),
@@ -26,12 +22,12 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
-      'https://amobile.vercel.app',
-      'http://amobile.vercel.app',
+      'https://amobilec.up.railway.app',
+      'http://amobilec.up.railway.app',
       'http://localhost:3001',
       'http://localhost:3000',
     ],
-    credentials: true, // разрешить отправку учетных данных (например, куки)
+    credentials: true,
   });
 
   const config = new DocumentBuilder()
