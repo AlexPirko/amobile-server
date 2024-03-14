@@ -14,7 +14,8 @@ async function bootstrap() {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        sameSite: 'lax',
+        sameSite: 'none',
+        secure: false,
       },
     }),
     passport.initialize(),
